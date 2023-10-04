@@ -16,19 +16,27 @@ namespace Delinian.Controllers
             this.writeService = writeService;
         }
 
-        [HttpGet("api/v1/create")]
+        [HttpGet("/api/v1/create")]
         public string CreatePerson(string firstName, string lastName, int age)
         {
             this.writeService.CreatePerson(firstName, lastName, age);
 
             return $"user with details {firstName}, {lastName}, {age} created";
         }
-        [HttpGet("api/v1/find")]
+        [HttpGet("/api/v1/find")]
         public string FindPerson(string firstName)
         {
             var person = this.readService.FindPerson(firstName);
-            
+            if (person == null)
+            {
+                return "not found!";
+            }
             return JsonSerializer.Serialize(person);
+        }
+        [HttpGet("/")]
+        public string Index()
+        {
+            return "Hello world";
         }
 
 
