@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_7d943c8710ce4a94b1752adce423f681 }}/delinian-api:${{ github.sha }}
+        tags: v1
         file: ./Dockerfile
 
   deploy:
