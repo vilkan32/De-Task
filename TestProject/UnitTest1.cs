@@ -24,5 +24,9 @@ namespace TestProject
         {
             Assert.True(true);
         }
+        public void Test4()
+        {
+            Assert.True(true);
+        }
     }
 }
