@@ -45,14 +45,6 @@ namespace Delinian
             {
                 app.UseDeveloperExceptionPage();
             }
-            using var scoperService = app.ApplicationServices.CreateScope();
-
-            var services = scoperService.ServiceProvider;
-
-            var context = services.GetRequiredService<DelinianContext>();
-
-            context.Database.Migrate();
-
 
             app.UseHttpsRedirection();
 
