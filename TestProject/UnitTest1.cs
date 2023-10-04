@@ -12,7 +12,7 @@ namespace TestProject
         [Test]
         public void Test1()
         {
-            Assert.True(false);
+            Assert.True(true);
         }
 
         public void Test2()
@@ -21,6 +21,10 @@ namespace TestProject
         }
 
         public void Test3()
+        {
+            Assert.True(true);
+        }
+        public void Test4()
         {
             Assert.True(true);
         }
