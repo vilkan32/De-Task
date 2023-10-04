@@ -30,8 +30,8 @@ namespace Delinian
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<IReadService, ReadService>();
-            services.AddSingleton<IReadService, ReadService>();
+            services.AddScoped<IReadService, ReadService>();
+            services.AddScoped<IReadService, ReadService>();
             services.AddDbContext<DelinianContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
             b => b.MigrationsAssembly("Delinian")));
@@ -45,6 +45,13 @@ namespace Delinian
             {
                 app.UseDeveloperExceptionPage();
             }
+            using var scoperService = app.ApplicationServices.CreateScope();
+
+            var services = scoperService.ServiceProvider;
+
+            var context = services.GetRequiredService<DelinianContext>();
+
+            context.Database.Migrate();
 
 
             app.UseHttpsRedirection();
