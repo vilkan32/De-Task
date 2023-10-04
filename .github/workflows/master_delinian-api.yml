@@ -26,6 +26,7 @@ jobs:
 
     - name: Build and run tests
       run: dotnet test ./TestProject/TestProject.csproj
+      continue-on-error: false
       
   build:
     runs-on: 'ubuntu-latest'
