@@ -2,16 +2,9 @@ using Delinian.Interfaces;
 using Delinian.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Delinian.Context;
 
@@ -31,7 +24,7 @@ namespace Delinian
         {
             services.AddControllers();
             services.AddScoped<IReadService, ReadService>();
-            services.AddScoped<IReadService, ReadService>();
+            services.AddScoped<IWriteService, WriteService>();
             services.AddDbContext<DelinianContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
             b => b.MigrationsAssembly("Delinian")));
@@ -45,6 +38,14 @@ namespace Delinian
             {
                 app.UseDeveloperExceptionPage();
             }
+            using var scoperService = app.ApplicationServices.CreateScope();
+
+            var services = scoperService.ServiceProvider;
+
+            var context = services.GetRequiredService<DelinianContext>();
+
+            context.Database.Migrate();
+
 
             app.UseHttpsRedirection();
 
