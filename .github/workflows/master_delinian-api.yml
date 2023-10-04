@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: v1
-        file: ./Dockerfile
+        file: ./Delinian/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
