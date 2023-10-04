@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: delinian-api:${{ github.sha }}
+        tags: vilkan32/delinian-api:${{ github.sha }}
         file: ./Delinian/Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'delinian-api'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_7c6171504cf34cb295ad12295d655bd6 }}
-        images: 'delinian-api:${{ github.sha }}'
+        images: 'vilkan32/delinian-api:${{ github.sha }}'
