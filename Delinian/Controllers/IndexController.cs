@@ -4,8 +4,7 @@ using System.Text.Json;
 
 namespace Delinian.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
+    [Controller]
     public class IndexController : ControllerBase
     {
         private readonly IWriteService writeService;
