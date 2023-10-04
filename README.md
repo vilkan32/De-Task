@@ -3,6 +3,7 @@
 2. Azure Database ![image](https://github.com/vilkan32/De-Task/assets/42586617/629d5035-623c-4a0b-9d16-eb37cb3b1148)
 3. Docker hub ![image](https://github.com/vilkan32/De-Task/assets/42586617/5b3ff5eb-a318-4575-8218-b5ac64ba3bfb)
 4. Source control - https://github.com/vilkan32/De-Task
+5. Github branch rules - ![image](https://github.com/vilkan32/De-Task/assets/42586617/4321d865-ffdb-4de7-92e8-77e44b33bad2)
 
 
 Steps:
