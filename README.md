@@ -5,6 +5,7 @@
 4. Source control - https://github.com/vilkan32/De-Task
 5. Github branch rules - ![image](https://github.com/vilkan32/De-Task/assets/42586617/4321d865-ffdb-4de7-92e8-77e44b33bad2)
 6. Database View VS - ![image](https://github.com/vilkan32/De-Task/assets/42586617/56cee8e5-ad27-465a-81cf-257412f22d1f)
+7. Docker desktop view docker compose file ![image](https://github.com/vilkan32/De-Task/assets/42586617/4b973500-8e73-4fdf-824a-6daedefccbab)
 
 
 Steps:
