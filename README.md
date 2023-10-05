@@ -13,6 +13,8 @@ public string CreatePerson(string firstName, string lastName, int age)
 public string FindPerson(string firstName)
 
 Steps:
-by creating the master_delinian-api.yml file generated from azure deployment center and edited for my purposes I was able to debug and deploy and build the web app on linux docker container. I have created the web app in VS as docker for linux app.
+By creating the master_delinian-api.yml file generated from azure deployment center and edited for my purposes 
+I was able to debug and deploy and build the web app on linux docker container. 
+I have created the web app in VS as docker for linux app.
 Pipeline gets triggered by PR merge there are 3 steps for test build and deploy if test fails it does not get deployed
-there is a docker-compose.yml
+There is a docker-compose.yml
