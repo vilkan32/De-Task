@@ -6,7 +6,11 @@
 5. Github branch rules - ![image](https://github.com/vilkan32/De-Task/assets/42586617/4321d865-ffdb-4de7-92e8-77e44b33bad2)
 6. Database View VS - ![image](https://github.com/vilkan32/De-Task/assets/42586617/56cee8e5-ad27-465a-81cf-257412f22d1f)
 7. Docker desktop view docker compose file ![image](https://github.com/vilkan32/De-Task/assets/42586617/4b973500-8e73-4fdf-824a-6daedefccbab)
-
+8. API Routes:
+[HttpGet("/api/v1/create")]
+public string CreatePerson(string firstName, string lastName, int age)
+[HttpGet("/api/v1/find")]
+public string FindPerson(string firstName)
 
 Steps:
 by creating the master_delinian-api.yml file generated from azure deployment center and edited for my purposes I was able to debug and deploy and build the web app on linux docker container. I have created the web app in VS as docker for linux app.
