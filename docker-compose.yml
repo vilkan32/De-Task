@@ -11,7 +11,7 @@ services:
       - sql-server
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Server=sql-server;Database=YourDatabase;User=YourUser;Password=YourPassword123!
+      - ConnectionStrings__DefaultConnection=Server=sql-server;Database=YourDatabase;User=sa;Password=YourPassword123!
 
   sql-server:
     image: mcr.microsoft.com/mssql/server:2019-latest
