@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   csharp-app:
-    image: vilkan32/delinian-api:c7ed4f377a991bf26d7dff68ac62e703053dc291
+    image: vilkan32/delinian-api:9a936e0610325e5b186bfc21b33810e5d5fe2251
     build:
       context: ./Delinian
     ports:
