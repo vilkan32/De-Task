@@ -18,9 +18,10 @@ namespace Delinian.Controllers
         [HttpGet("/api/v1/create")]
         public string CreatePerson(string firstName, string lastName, int age)
         {
-            this.writeService.CreatePerson(firstName, lastName, age);
+            var person = this.writeService.CreatePerson(firstName, lastName, age);
+            this.writeService.Dispose();
 
-            return $"user with details {firstName}, {lastName}, {age} created";
+            return $"user with details {person.FirstName}, {person.LastName}, {person.Age} created";
         }
         [HttpGet("/api/v1/find")]
         public string FindPerson(string firstName)
@@ -30,6 +31,7 @@ namespace Delinian.Controllers
             {
                 return "not found!";
             }
+            this.readService.Dispose();
             return JsonSerializer.Serialize(person);
         }
         [HttpGet("/")]
