@@ -2,6 +2,7 @@
 using Delinian.Interfaces;
 using Delinian.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 
 namespace Delinian.Services
@@ -16,11 +17,18 @@ namespace Delinian.Services
             this.db = db;
         }
 
+        public void Dispose()
+        {
+            db.Dispose();
+            GC.SuppressFinalize(this);
+        }
+
         public Person? FindPerson(string firstName)
         {
             var user = this.db.People.FirstOrDefault(x => x.FirstName == firstName);
 
             return user;
         }
+
     }
 }

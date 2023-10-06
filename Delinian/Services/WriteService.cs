@@ -1,6 +1,7 @@
 ﻿using Delinian.Context;
 using Delinian.Interfaces;
 using Delinian.Models;
+using System;
 
 namespace Delinian.Services
 {
@@ -18,6 +19,12 @@ namespace Delinian.Services
             var person = db.People.Add(new Person { FirstName = firstName, LastName = lastName, Age = age }).Entity;
             db.SaveChanges();
             return person;
+        }
+
+        public void Dispose()
+        {
+            db.Dispose();
+            GC.SuppressFinalize(this);
         }
     }
 }
