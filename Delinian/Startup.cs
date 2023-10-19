@@ -42,7 +42,7 @@ namespace Delinian
 
             var services = scoperService.ServiceProvider;
 
-            var context = services.GetRequiredService<DelinianContext>();
+            using var context = services.GetRequiredService<DelinianContext>();
 
             context.Database.Migrate();
 
